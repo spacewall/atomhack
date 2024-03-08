@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import dotenv_values
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,6 +27,8 @@ SECRET_KEY = 'django-insecure--u)wof28n)kz40i5l!$dyx)z$6z7y1&hi5_m)dc+ynmo-g@2=x
 DEBUG = True
 
 ALLOWED_HOSTS = []
+USER = 'postgres'
+PASSWORD = dotenv_values('.env')['password']
 
 
 # Application definition
@@ -77,8 +80,12 @@ WSGI_APPLICATION = 'space_mail.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'atomhack',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+        'USER': USER,
+        'PASSWORD': PASSWORD
     }
 }
 
