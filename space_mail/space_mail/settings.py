@@ -82,6 +82,7 @@ if DEBUG:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
+    
 else:
     DATABASES = {
         'default': {
