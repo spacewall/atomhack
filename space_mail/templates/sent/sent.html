@@ -52,25 +52,14 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>1</td>
-                <td>Отчет_1.pdf</td>
-                <td>2024-03-04</td>
-                <td>2024-03-05</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Отчет_2.pdf</td>
-                <td>2024-03-04</td>
-                <td>2024-03-05</td>
-            </tr>
-
-            <tr>
-                <td>3</td>
-                <td>Отчет_3.pdf</td>
-                <td>2024-03-04</td>
-                <td>2024-03-05</td>
-            </tr>
+                {% for report in reports %}
+                <tr>
+                    <td>{{ report.id }}</td>
+                    <td>{{ report.name }}</td>
+                    <td>{{ report.release_date }}</td>
+                    <td>{{ report.send_date }}</td>
+                </tr>
+            {% endfor %}
             </tbody>
         </table>
     </div>

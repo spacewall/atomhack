@@ -16,4 +16,4 @@ class Command(BaseCommand):
             return ''.join(random.choice(letters) for _ in range(length))
         
         for _ in range(10):
-            Report(name_and_surname=names.get_full_name(gender='man'), context=randomword(10)).save()
+            Report(author=names.get_full_name(gender='man'), context=randomword(10), name=randomword(5)).save()

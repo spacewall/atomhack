@@ -3,3 +3,4 @@
 *.pdf
 .env
 .idea/
+space_mail/db.sqlite3
