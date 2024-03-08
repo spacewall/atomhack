@@ -1,4 +1,4 @@
-import csv
+import csv, random, string
 
 import names
 
@@ -11,8 +11,9 @@ class Command(BaseCommand):
         pass
 
     def handle(self, *args, **options):
-        with open('reports.csv', 'r') as file:
-            reports = list(csv.DictReader(file, delimiter=';'))
-
-            for report in reports:
-                Report(**report).save()
+        def randomword(length):
+            letters = string.ascii_lowercase
+            return ''.join(random.choice(letters) for _ in range(length))
+        
+        for _ in range(10):
+            Report(name_and_surname=names.get_full_name(gender='man'), context=randomword(10)).save()
