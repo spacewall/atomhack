@@ -25,7 +25,7 @@ def sent_reports(request):
 
 
 def pending_reports(request):
-    template = 'waiting/waiting.html'
+    template = 'pending/pending.html'
 
     context = {'reports': Report.objects.all()}
 
