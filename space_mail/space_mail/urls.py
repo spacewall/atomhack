@@ -17,6 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+import mars_client
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', mars_client.views.index),
+    path('new_report/', mars_client.views.new_report, name='new_report'),
+    path('sent_reports/', mars_client.views.sent_reports, name='sent_reports'),
+    path('pending_reports/', mars_client.views.pending_reports, name='pending_reports')
 ]
