@@ -6,8 +6,8 @@ from mars_client.models import Report
 def new_report(request):
     template = 'new_report/new_report.html'
 
-    name = request.POST()['name']
-    text = request.POST()['text']
+    name = request.POST.get('name', '')
+    text = request.POST.get('text', '')
 
     return render(request, template)
 
