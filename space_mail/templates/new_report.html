@@ -19,7 +19,7 @@
     </div>
     <form method="POST">
     {% csrf_token %}
-    {{ form.as_div }}
+    {% bootstrap_form form %}
     {{ form.media }}
     <input type="submit" value="Отправить" class="btn btn-primary">
     </form>
