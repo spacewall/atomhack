@@ -27,7 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 USER = 'postgres'
-PASSWORD = dotenv_values('../.env')['password']
+if not DEBUG:
+    PASSWORD = dotenv_values('../.env')['password']
 
 # Application definition
 
