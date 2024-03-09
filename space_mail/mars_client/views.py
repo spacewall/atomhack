@@ -43,6 +43,12 @@ def pending_reports(request):
     else:
         reports = Report.objects.all()
 
+    if filtering == 'name':
+        reports = Report.objects.filter('name')
+
+    elif reports is None:
+        reports = Report.objects.all()
+
     context = {'reports': Report.objects.all()}
 
     return render(request, template, context)
