@@ -20,7 +20,7 @@ from django.urls import path, include
 from mars_client.views import index, sent_reports, pending_reports, NewReportCreateView
 
 urlpatterns = [
-    path('', index),
+    path('', index, name='base'),
     path('admin/', admin.site.urls),
     path('new_report/', NewReportCreateView.as_view(), name='new_report'),
     path('sent_reports/', sent_reports, name='sent_reports'),

@@ -19,10 +19,9 @@
     </div>
     <form method="POST">
     {% csrf_token %}
-    {{ form.media }}
-    {{ form.as_p }}
-    
-    </div>
+    {% comment %} {{ form.media }} {% endcomment %}
+    {{ form.as_div }}
+    <button type="submit" class="btn btn-primary">Отправить</button>
 </div>
 </body>
 </html>

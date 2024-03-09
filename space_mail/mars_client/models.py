@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 from django_ckeditor_5.fields import CKEditor5Field
 
@@ -20,3 +21,6 @@ class Report(models.Model):
     
     def __str__(self) -> str:
         return self.name
+    
+    def get_absolute_url(self):
+        return reverse('base')
