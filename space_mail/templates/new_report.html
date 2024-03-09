@@ -11,35 +11,19 @@
 <body>
 {#	<iframe src="../topbar/topbar.html" frameborder="0" width="100%" height="100%"></iframe>#}
 {% include "topbar.html" %}
+
+{% block content %}
 <div class="container">
     <div class="d-flex justify-content-center flex-nowrap">
         <h1>Новый отчет</h1>
     </div>
-   <div class="d-flex justify-content-center flex-nowrap">
-    <form class="row g-3">
-       <legend class="d-flex justify-content-center flex-nowrap">Данные отчета</legend>
-        <div class="mb-3 row">
-            <label for="username" class="col-sm-2 col-form-label">Имя ученого:</label>
-            <div class="col-sm-10">
-            <input type="text" id="username" name="username" class="form-control">
-            </div>
-        </div>
-        <div class="mb-3 row">
-            <label for="report" class="col-sm-2 form-label">Текст отчета:</label>
-            <div class="col-sm-10">
-            <textarea id="report" class="form-control"></textarea>
-            </div>
-        </div>
-        <div class="mb-3 row">
-            <label for="file" class="col-sm-2 form-label">Файл:</label>
-            <div class="col-sm-10">
-            <input type="file" id="file" class="form-control">
-            </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Отправить</button>
-    </form>
-   </div>
+    <form method="POST">
+    {% csrf_token %}
+    {{ form.media }}
+    {{ form.as_p }}
+    
+    </div>
 </div>
 </body>
 </html>
-
+{% endblock %}

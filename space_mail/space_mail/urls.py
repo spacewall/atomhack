@@ -15,14 +15,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
-import mars_client.views
+from mars_client.views import index, sent_reports, pending_reports, NewReportCreateView
 
 urlpatterns = [
-    path('', mars_client.views.index),
+    path('', index),
     path('admin/', admin.site.urls),
-    path('new_report/', mars_client.views.new_report, name='new_report'),
-    path('sent_reports/', mars_client.views.sent_reports, name='sent_reports'),
-    path('pending_reports/', mars_client.views.pending_reports, name='pending_reports')
+    path('new_report/', NewReportCreateView.as_view(), name='new_report'),
+    path('sent_reports/', sent_reports, name='sent_reports'),
+    path('pending_reports/', pending_reports, name='pending_reports'),
+    path("ckeditor5/", include('django_ckeditor_5.urls'), name="ck_editor_5_upload_file")
 ]

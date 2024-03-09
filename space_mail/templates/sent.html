@@ -53,12 +53,14 @@
             </thead>
             <tbody>
                 {% for report in reports %}
+                {% if report.send_date is not None %}
                 <tr>
                     <td>{{ report.id }}</td>
                     <td>{{ report.name }}</td>
                     <td>{{ report.release_date }}</td>
                     <td>{{ report.send_date }}</td>
                 </tr>
+                {% endif %}
             {% endfor %}
             </tbody>
         </table>

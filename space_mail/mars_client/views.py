@@ -1,14 +1,14 @@
 from django.shortcuts import render, redirect
+from django.views.generic import CreateView
 
 from mars_client.models import Report
 
-def new_report(request):
-    template = 'new_report.html'
+class NewReportCreateView(CreateView):
+    model = Report
+    template_name = 'new_report.html'
 
-    name = request.POST.get('name', '')
-    text = request.POST.get('text', '')
+    fields = ['name', 'author', 'context', 'files']
 
-    return render(request, template)
 
 def index(request):
     return redirect('new_report')
