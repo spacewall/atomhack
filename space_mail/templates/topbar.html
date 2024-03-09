@@ -16,13 +16,13 @@
                 <a class="nav-link link-light" href="/"></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link link-light" href="/new_report">Новый отчет</a>
+                <a class="nav-link link-light" href="{% url 'new_report' %}">Новый отчет</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link link-light" href="/sent_reports">Отправленные</a>
+                <a class="nav-link link-light" href="{% url 'sent_reports' %}">Отправленные</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link link-light" href="/pending_reports">Ждут отправки</a>
+                <a class="nav-link link-light" href="{% url 'pending_reports' %}">Ждут отправки</a>
             </li>
         </ul>
 	</div>
