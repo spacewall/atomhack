@@ -16,7 +16,7 @@ database=<db_name>
 # Запуск
 ```
 cd space_mail
-python manage.py runserver
+python manage.py runserver --insecure
 ```
 ```
 python space_emulator.py
