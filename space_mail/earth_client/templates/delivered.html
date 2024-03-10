@@ -1,0 +1,35 @@
+{% extends 'earth_base.html' %}
+{% load django_bootstrap5 %}
+{% block content %}
+    <div class="container">
+        <div class="d-flex justify-content-center flex-nowrap">
+            <h1>Полученные отчеты</h1>
+        </div>
+        <div class="d-flex justify-content-center flex-nowrap">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Имя файла</th>
+                    <th>Имя автора</th>
+                    <th>Дата создания</th>
+                    <th>Дата отправки</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for report in reports %}
+                    {% if report.send_date is not None %}
+                    <tr>
+                        <td>{{ report.id }}</td>
+                        <td>{{ report.name }}</td>
+                        <td>{{ report.author }}</td>
+                        <td>{{ report.release_date }}</td>
+                        <th>{{ report.send_date }}</th>
+                    </tr>
+                    {% endif %}
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

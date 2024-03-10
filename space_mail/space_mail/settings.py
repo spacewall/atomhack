@@ -23,11 +23,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure--u)wof28n)kz40i5l!$dyx)z$6z7y1&hi5_m)dc+ynmo-g@2=x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 USER = 'postgres'
-PASSWORD = dotenv_values('../.env')['password']
+if not DEBUG:
+    config = dotenv_values('../.env')
+    PASSWORD = config['password']
+    LOGIN = config['login']
+    DATABASE = config['database']
 
 # Application definition
 
@@ -41,6 +45,7 @@ INSTALLED_APPS = [
     "django_bootstrap5",
     'earth_client',
     'mars_client',
+    'index',
     'django_ckeditor_5'
 ]
 
@@ -59,7 +64,7 @@ ROOT_URLCONF = 'space_mail.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['mars_client/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -88,10 +93,10 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'atomhack',
+            'NAME': DATABASE,
             'HOST': '127.0.0.1',
             'PORT': '5432',
-            'USER': USER,
+            'USER': LOGIN,
             'PASSWORD': PASSWORD
         }
     }
@@ -129,6 +134,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+# STATIC_ROOT = 'static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

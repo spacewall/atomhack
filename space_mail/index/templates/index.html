@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="icon" href="{% static 'postfox.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <title>Навигация</title>
+</head>
+<body>
+<div class="button-container">
+    <button onclick="window.location.href='{% url 'mars_base' %}'">
+        <img src="{% static 'mars.png' %}" alt="Клиент Марса">
+        Клинт Марс
+    </button>
+    <button onclick="window.location.href='{% url 'earth_base' %}'">
+        <div class="wrapper">
+            <img src="{% static 'earth.png' %} " alt="Клиент Земли">
+            Клиент Земли
+        </div>
+    </button>
+</div>
+</body>
+</html>
