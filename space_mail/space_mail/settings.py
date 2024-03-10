@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "django_bootstrap5",
     'earth_client',
     'mars_client',
+    'index',
     'django_ckeditor_5'
 ]
 

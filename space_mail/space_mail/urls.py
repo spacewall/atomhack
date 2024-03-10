@@ -17,8 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from index.views import index
+
 urlpatterns = [
-    # path('', index, name='base'),
+    path('', index, name='base'),
     path('admin/', admin.site.urls),
     path('earth_client/', include('earth_client.urls')),
     path('mars_client/', include('mars_client.urls'))
