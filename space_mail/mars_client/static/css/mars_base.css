@@ -4,60 +4,9 @@ body {
     height: 50px;
 
 }
-body {
-    margin: 0;
-    padding: 0;
-    height: 50px;
-}
 
-.tab-bar {
+.logo{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f0f0;
-    padding: 0;
-}
-
-.tab-bar a {
-    display: inline-block;
-    width: 50px; /* Ширина кнопок */
-    height: 50px; /* Высота кнопок */
-    margin: 0 5px;
-    border-radius: 50%; /* Делаем круглые кнопки */
-    background-color: #fff; /* Цвет фона кнопок */
-    background-size: cover; /* Масштабируем фоновые изображения */
-    transition: background-color 0.3s;
-}
-
-.tab-bar a:hover {
-    background-color: #ddd; /* Изменение цвета фона при наведении */
-}
-
-/* Задаем фоновые изображения для кнопок */
-.tab-bar a.home {
-    background-image: url('home_icon.png'); /* Иконка для домашней страницы */
-}
-
-.tab-bar a.new-report {
-    background-image: url('new_report_icon.png'); /* Иконка для нового отчета */
-}
-
-.tab-bar a.sent-reports {
-    background-image: url('sent_reports_icon.png'); /* Иконка для отправленных отчетов */
-}
-
-.tab-bar a.pending-reports {
-    background-image: url('pending_reports_icon.png'); /* Иконка для ожидающих отправки отчетов */
-}
-
-/* Скрыть текст на кнопках */
-.tab-bar a span {
-    display: none;
-}
-
-/* Показать текст при наведении */
-.tab-bar a:hover span {
-    display: inline;
-    position: absolute;
-    margin-left: 60px; /* Отступ текста от иконки */
+    height: 80px;  
+    margin: -10px;
 }
