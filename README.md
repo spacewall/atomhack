@@ -4,6 +4,7 @@ cd space_mail
 python -m venv venv
 pip install -r ../requirements.txt
 python manage.py makemigrations
+python manage.py import_reports
 ```
 Дополнительно необходимо поставить postgresql
 
