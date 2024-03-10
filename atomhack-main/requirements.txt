@@ -1,0 +1,7 @@
+django
+psycopg2-binary
+python-dotenv
+django-filter
+names
+django-bootstrap5
+django-ckeditor-5

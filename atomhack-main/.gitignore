@@ -1,0 +1,10 @@
+.DS_Store
+/venv
+space_mail/earth_client/__pycache__
+space_mail/space_mail/__pycache__
+space_mail/db.sqlite3
+space_mail/mars_client/__pycache__
+*.pdf
+.env
+.idea/
+*.docx
