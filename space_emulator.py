@@ -18,7 +18,10 @@ with psycopg2.connect(database=DATABASE, user=LOGIN, password=PASSWORD) as conne
 
         while True:
             cur.execute("""SELECT * FROM mars_client_report WHERE send_date IS NULL""")
-            field = cur.fetchall()[-1]
+            field = cur.fetchone()
+
+            if field is None:
+                continue
 
             # UTF-8 encoding
             size = len(''.join([str(el) for el in field])) / 8
@@ -32,7 +35,7 @@ with psycopg2.connect(database=DATABASE, user=LOGIN, password=PASSWORD) as conne
                 
                 if now >= time_from and now <= time_to:
                     if timedelta(seconds=file_time) < time_to - last_time:
-                        last_time = now + file_time
+                        last_time = now + timedelta(seconds=file_time)
                         
                         if last_time > time_to:
                             last_time = time_to
