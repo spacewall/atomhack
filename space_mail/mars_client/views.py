@@ -18,7 +18,6 @@ def index(request):
 def sent_reports(request):
     template = 'sent.html'
     sorting = request.GET.get('sort')
-    filtering = request.GET.get('filter')
 
     if sorting == 'release_date':
         reports = Report.objects.order_by('release_date')
