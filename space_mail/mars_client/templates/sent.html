@@ -14,8 +14,9 @@
             <table id="data-table" class="table">
                 <thead>
                 <tr>
-                    <th onclick="alert()">№</th>
+                    <th>№</th>
                     <th onclick="sortTable('file')">Имя файла</th>
+                    <th onclick="sortTable('author')">Имя автора</th>
                     <th onclick="sortTable('creation')">Дата создания</th>
                     <th onclick="sortTable('sending')">Дата отправки</th>
                 </tr>
@@ -26,6 +27,7 @@
                         <tr>
                             <td>{{ report.id }}</td>
                             <td>{{ report.name }}</td>
+                            <td>{{ report.author }}</td>
                             <td>{{ report.release_date }}</td>
                             <td>{{ report.send_date }}</td>
                         </tr>

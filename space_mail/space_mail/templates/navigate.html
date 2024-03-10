@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'css/base.css' %}">
+	<title>Навигация</title>
+</head>
+<body>
+	
+	<div class="button-container">
+		<button onclick="window.location.href='{% url 'new_report' %}'">
+		    <img src="mars.png" alt="Клиент мара">
+		</button>
+
+		<button onclick="window.location.href='{% url 'delivered' %}'">
+			<div class="wrapper">
+				<img src="earth.png" alt="Клиент земли">
+		    Клиент Земли
+			</div>
+		    
+		</button>
+	</div>
+
+
+</body>
+</html>
