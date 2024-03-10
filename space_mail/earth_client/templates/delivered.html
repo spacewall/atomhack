@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="{% static 'css/delivered.css' %}">
-	<title>Document</title>
-</head>
-<body>
-	
-	<div class="container">
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% block content %}
+    <div class="container">
         <div class="d-flex justify-content-center flex-nowrap">
             <h1>Полученные отчеты</h1>
-        </div>	
+        </div>
         <div class="sort-block">
             <span class="sort-item">Сортировать по</span>
             <a class="sort-item" href="?sort=release_date">по дате создания</a>
@@ -35,13 +28,12 @@
                     <tr>
                         <td>{{ report.id }}</td>
                         <td>{{ report.name }}</td>
-                        <td>{{ report.author}}</td>
-                        <td>{{ report.release_date }}</td>                    </tr>
+                        <td>{{ report.author }}</td>
+                        <td>{{ report.release_date }}</td>
+                    </tr>
                 {% endfor %}
                 </tbody>
             </table>
         </div>
     </div>
-
-</body>
-</html>
+{% endblock %}
