@@ -10,3 +10,18 @@ body {
     height: 80px;  
     margin: -10px;
 }
+
+.top-bar{    
+    margin: -8px;
+    background-color: #175663;
+}
+
+#content {
+    color:#fff ;
+}
+
+#topBar .bar-item .content {
+     display: flex;
+    justify-content: center; 
+    align-items: center;
+}

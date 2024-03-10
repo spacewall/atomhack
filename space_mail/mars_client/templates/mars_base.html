@@ -34,24 +34,24 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
+<nav class=" navbar navbar-expand-lg navbar-light bg-light">
+    <div class="top-bar container-fluid">
         <a class="logo navbar-brand" href="/">
             <img src="{% static 'postfox.png' %}" alt="Space Mail">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse" id="navbarNav" id= "topBar">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'new_report' %}">Новый отчет</a>
+                <li class = "bat-item" class="nav-item">
+                    <a class="nav-link" id = "content" href="{% url 'new_report' %}">Новый отчет</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'sent_reports' %}">Отправленные</a>
+                    <a class="content nav-link" id = "content" href="{% url 'sent_reports' %}">Отправленные</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'pending_reports' %}">Ждут отправки</a>
+                    <a class="content nav-link" id = "content" href="{% url 'pending_reports' %}">Ждут отправки</a>
                 </li>
             </ul>
         </div>
