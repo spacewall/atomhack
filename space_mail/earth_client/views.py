@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from earth_client.models import Report
+from mars_client.models import Report
 
 def index(request):
     return redirect('delivered_reports')
