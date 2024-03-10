@@ -23,12 +23,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure--u)wof28n)kz40i5l!$dyx)z$6z7y1&hi5_m)dc+ynmo-g@2=x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 USER = 'postgres'
 if not DEBUG:
-    PASSWORD = dotenv_values('../.env')['password']
+    config = dotenv_values('../.env')
+    PASSWORD = config['password']
+    LOGIN = config['login']
+    DATABASE = config['database']
 
 # Application definition
 
@@ -89,10 +92,10 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'atomhack',
+            'NAME': DATABASE,
             'HOST': '127.0.0.1',
             'PORT': '5432',
-            'USER': USER,
+            'USER': LOGIN,
             'PASSWORD': PASSWORD
         }
     }
