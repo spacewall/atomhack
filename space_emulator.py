@@ -9,4 +9,6 @@ PASSWORD = config["password"]
 DATABASE = config["database"]
 with psycopg2.connect(database=DATABASE, user=LOGIN, password=PASSWORD) as connection:
     with connection.cursor() as cur:
-        cur.execute("""UPDATE mars_client_report SET send_date = %s WHERE send_date = %s""", (datetime.now(), None))
+        cur.execute("""UPDATE mars_client_report SET send_date = %s WHERE id = %s""", (datetime.now(), 1))
+
+        connection.commit()
