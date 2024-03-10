@@ -14,6 +14,7 @@ class NewReportCreateView(CreateView):
 def index(request):
     return redirect('new_report')
 
+
 def sent_reports(request):
     template = 'sent.html'
     sorting = request.GET.get('sort')
@@ -21,7 +22,7 @@ def sent_reports(request):
 
     if sorting == 'release_date':
         reports = Report.objects.order_by('release_date')
-    
+
     elif sorting == 'send_date':
         reports = Report.objects.order_by('send_date')
 
@@ -31,6 +32,7 @@ def sent_reports(request):
     context = {'reports': reports}
 
     return render(request, template, context)
+
 
 def pending_reports(request):
     template = 'pending.html'
