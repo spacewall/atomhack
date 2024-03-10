@@ -1,0 +1,28 @@
+button {
+    border-radius: 5px;
+    border: 1px;
+    margin: 50px;
+    background: none;
+    cursor: pointer;
+    display: inline-block; 
+    text-align: center; 
+}
+
+
+button img {
+    width: 100px; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
+}
+
+
+div.button-container {
+    border-color: #000;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 150px; 
+}
+
+

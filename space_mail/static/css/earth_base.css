@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 50px;
+
+}
+
+.logo{
+    display: flex;
+    height: 80px;  
+    margin: -10px;
+}
+
