@@ -6,6 +6,7 @@ pip install -r ../requirements.txt
 python manage.py makemigrations
 ```
 Дополнительно необходимо поставить postgresql
+
 Создать .env в корне репозитория со следующим содержимым:
 ```
 login=<db_login>
